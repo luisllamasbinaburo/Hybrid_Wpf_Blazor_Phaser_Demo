@@ -1,0 +1,15 @@
+﻿@page "/"
+@inject IJSRuntime JS
+@inject PhaserInterop phaser
+
+<div id="canvas"></div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {           
+            await phaser.Init(JS);
+        }
+    }
+}
